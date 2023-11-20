@@ -7,20 +7,6 @@ class Program
         int option = 0;
         Promts prompt = new Promts();
 
-
-        while (option != 5)
-        {
-            Console.WriteLine("\n\n");
-            Console.WriteLine("Welcome to the Journal program!");
-            Console.WriteLine("Please select one of the following options:");
-            Console.WriteLine("1. Add a journal entry");
-            Console.WriteLine("2. List journal entries");
-            Console.WriteLine("3. List prompts");
-            Console.WriteLine("4. Quit");
-            
-            option = int.Parse(Console.ReadLine());
-
-
             if (option == 1)
             {   
                 JournalEntries journalEntry = new JournalEntries();
