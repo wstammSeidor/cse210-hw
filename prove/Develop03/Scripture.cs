@@ -2,6 +2,8 @@ public class Scripture{
         private Referece _reference ;
         private List<Word> _words ;
 
+        private Hider _hider = new Hider();
+
         public Scripture(Referece reference, List<Word> words){
             _reference = reference;
             _words = words;
@@ -10,10 +12,15 @@ public class Scripture{
         public void HideRandomWords(int numberToHide){
             Random random = new Random();
             int randomIndex = 0;
-            for(int i = 0; i < numberToHide; i++){
+            randomIndex = random.Next(0, _words.Count);
+            while(_hider.IsHiddenWord(randomIndex)){
                 randomIndex = random.Next(0, _words.Count);
-                _words[randomIndex].Hide();
             }
+                for(int i = 0; i < numberToHide; i++){
+                    randomIndex = random.Next(0, _words.Count);
+                    _words[randomIndex].Hide();
+                }
+
         }
 
         public string GetDisplayText(){
